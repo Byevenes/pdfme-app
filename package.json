@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@pdfme/common": "^3.2.3",
+    "@pdfme/generator": "^3.2.3",
+    "@pdfme/schemas": "^3.2.3",
+    "@pdfme/ui": "^3.2.3",
+    "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.0"
+    "signature_pad": "^4.1.7"
   },
   "devDependencies": {
     "typescript": "^5",
