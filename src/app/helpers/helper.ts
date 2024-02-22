@@ -100,6 +100,24 @@ export const getPlugins = () => {
   };
 };
 
+export const generatePDFReal = async () => {
+  const template = getTemplate();
+  const inputs = template.sampledata ?? [];
+  const font = await getFontsData();
+
+  const pdfReal = await generate({
+    template,
+    inputs,
+    options: { font },
+    plugins: getPlugins(),
+  });
+
+  // fs.writeFileSync(path.join(__dirname, `test.pdf`), pdf); save to local
+
+  const blob = new Blob([pdfReal.buffer], { type: "application/pdf" });
+  window.open(URL.createObjectURL(blob));
+};
+
 export const generatePDF = async (
   currentRef: Designer | Form | Viewer | null
 ) => {
